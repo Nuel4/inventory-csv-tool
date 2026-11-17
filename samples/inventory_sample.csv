@@ -1,0 +1,16 @@
+sku,name,category,quantity,unit_price,reorder_level
+EL-001,USB-C Cable 1m,Electronics,45,4.99,20
+EL-002,Wireless Mouse,Electronics,8,12.50,10
+EL-003,Phone Charger 20W,Electronics,3,15.00,5
+ST-001,Blue Ballpoint Pen (10 pack),Stationery,120,2.30,50
+ST-002,A4 Notebook,Stationery,15,3.75,20
+ST-003,Stapler,Stationery,6,7.20,5
+KI-001,Ceramic Mug,Kitchen,30,5.50,10
+KI-002,Chef Knife 20cm,Kitchen,4,24.99,5
+KI-003,Cutting Board,Kitchen,12,9.80,8
+CL-001,Dish Soap 500ml,Cleaning,60,1.95,25
+CL-002,Microfibre Cloth (5 pack),Cleaning,9,6.40,10
+CL-003,Glass Cleaner,Cleaning,0,3.10,5
+EL-004,HDMI Cable 2m,Electronics,-2,8.99,5
+ST-004,Highlighter Set,Toys,25,4.50,10
+EL-001,USB-C Cable 2m,Electronics,10,6.49,5
