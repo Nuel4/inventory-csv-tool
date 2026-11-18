@@ -65,3 +65,26 @@ inventory summary
   one row per category: category, items, units, value.
 - No stray blank lines at the start of any output.
 - Python 3.11+ only.
+
+
+
+
+
+## Decisions (added after Run 2)
+- Duplicate SKU: only VALID rows claim a SKU. If the first row with a SKU is
+  invalid, the first valid row with that SKU is kept.
+- Summary (screen and export) always shows all four categories, with 0 for
+  categories that have no items.
+- Tests must check the code's behaviour only. No tests that depend on the
+  machine running them (e.g. checking the Python version in use).
+- Leading/trailing spaces in cells are trimmed before validation. Document
+  this in the README.
+
+## New feature (added after Run 2)
+- `inventory update SKU --quantity N` changes the quantity of one item in
+  the currently imported CSV file.
+- N must be a whole number >= 0, otherwise show an error and exit 1.
+- If the SKU doesn't exist among valid rows, show an error and exit 1.
+- Before writing, save a backup of the original file as FILE.bak.
+- All other rows (including invalid ones) and their order stay unchanged.
+- If nothing has been imported, use the same "No file imported yet" error.
