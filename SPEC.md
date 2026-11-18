@@ -44,3 +44,24 @@ inventory summary
 - Every feature above works and has tests, including invalid-data cases
 - pytest passes with no failures
 - README explains install, usage, and the CSV format with examples
+
+
+
+
+
+
+## Decisions (added after Run 1)
+- State: `inventory import FILE` saves the file path to `.inventory_state`
+  in the current folder. search, low-stock and summary read the file from
+  there. No hardcoded default file. If nothing has been imported yet, show:
+  "No file imported yet. Run: inventory import FILE" and exit with code 1.
+- `.inventory_state` must be in .gitignore.
+- Invalid-row warnings: show the full list only on `import`. Other commands
+  show one line only, e.g. "3 invalid rows skipped — run import for details".
+- Duplicate SKU: keep the first row, report later ones as duplicates.
+- Summary shows BOTH: total items (distinct SKUs) and total units (sum of
+  quantity).
+- Export: available on search, low-stock AND summary. Summary export writes
+  one row per category: category, items, units, value.
+- No stray blank lines at the start of any output.
+- Python 3.11+ only.
